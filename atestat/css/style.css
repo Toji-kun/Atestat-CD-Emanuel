@@ -286,13 +286,14 @@ section {
 }
 
 .home .content {
-  max-width: 60rem;
+  max-width: 70rem;
 }
 
 .home .content h3 {
   font-size: 6rem;
   text-transform: uppercase;
   color: #fff;
+  text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
 }
 
 .home .content p {
@@ -591,61 +592,73 @@ section {
 .review .box-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  gap: 1.5rem;
+  gap: 2.5rem;
+  padding: 2rem;
 }
 
 .review .box-container .box {
-  border: var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.review .box-container .box:hover {
+  background: #fff;
+  transform: translateY(-1rem);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
+}
+
+.review .box-container .box .quote {
+  width: 15rem;
+  height: 15rem;
+  object-fit: contain;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
 }
 
 .review .box-container .box p {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   line-height: 1.8;
-  color: #fdfdfd;
-  padding: 2rem 0;
-  text-decoration-color: #faf7f7;
+  color: #eee;
+  padding: 1rem 0;
+  font-style: italic;
+}
+
+.review .box-container .box:hover p {
+  color: #333;
 }
 
 .review .box-container .box .user {
-  height: 7rem;
-  width: 7rem;
+  height: 8rem;
+  width: 8rem;
   border-radius: 50%;
   object-fit: cover;
+  margin-top: 2rem;
+  border: 4px solid var(--main-color);
 }
 
 .review .box-container .box h3 {
   padding: 1rem 0;
-  font-size: 2rem;
-}
-
-.review .box-container .box .stars i {
-  font-size: 1.5rem;
+  font-size: 2.2rem;
   color: var(--main-color);
 }
 
-.box .quote {
-  width: 30rem;
-  height: 30rem;
-}
-
-.review .box-container .box:hover {
-  background: #ffffff; /* Schimbă fundalul */
-  color: #000000; /* Schimbă culoarea textului */
-}
-
-.review .box-container .box:hover p {
-  color: #0c0a0a; /* Schimbă culoarea textului */
-  text-decoration-color: #000000;
-}
-
 .review .box-container .box:hover h3 {
-  color: #000000; /* Inversează culoarea titlului */
+  color: var(--black);
+}
+
+.review .box-container .box .stars i {
+  font-size: 1.6rem;
+  color: var(--main-color);
 }
 
 .review .box-container .box:hover .stars i {
-  color: #cfe410; /* Schimbă culoarea stelelor */
+  color: #d3ad7f;
 }
 
 .contact .row {
@@ -815,65 +828,80 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 50px; /* Spațiu mai mare între casete */
-  padding: 120px 20px 20px; /* Mai mult spațiu față de navbar */
-  width: 90%;
+  gap: 3rem;
+  padding: 5rem 2rem 5rem;
+  width: 100%;
   max-width: 1200px;
-  margin-left: 150px;
+  margin: 0 auto;
 }
 
 .advice-box {
-  background: #3b3b3b;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-  width: 350px;
-  height: 420px;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
+  width: 35rem;
+  min-height: 45rem;
   text-align: center;
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.advice-box:hover {
+  transform: translateY(-1rem);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--main-color);
 }
 
 .advice-box h2 {
-  width: 300px;
-  height: 30px;
-  text-decoration: wavy;
-  font-size: 20px;
-}
-.advice-box:hover {
-  transform: scale(1.05);
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: var(--main-color);
+  min-height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .advice-box p {
-  font-size: 18px; /* Mărește fontul pentru claritate */
+  font-size: 1.6rem;
   line-height: 1.6;
-  padding: 10px;
+  padding: 1.5rem 0;
+  color: #eee;
+  flex-grow: 1;
 }
 
-img {
+.advice-box img {
   width: 100%;
-  height: 200px;
-  border-radius: 10px;
+  height: 20rem;
+  border-radius: 1rem;
   object-fit: cover;
+  margin-bottom: 1.5rem;
 }
 
-button {
-  margin-top: 15px;
-  padding: 10px 20px;
+.advice-box .bac {
+  margin-top: auto;
+  padding: 1.2rem 2.5rem;
   border: none;
-  background-color: #7aba78;
-  color: white;
-  font-size: 16px;
-  border-radius: 5px;
+  background-color: var(--main-color);
+  color: var(--black);
+  font-size: 1.6rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  width: 100%;
 }
 
-button :hover {
-  background-color: #1e221e;
+.advice-box .bac:hover {
+  background-color: #fff;
+  letter-spacing: 0.1rem;
 }
 
 /*media queries */

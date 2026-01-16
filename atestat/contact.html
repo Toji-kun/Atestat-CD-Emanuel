@@ -1,113 +1,241 @@
 <!DOCTYPE html>
 <html lang="ro">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Atestat - Contact</title>
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      body {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+          ),
+          url(images/background11.avif);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+      .contact .row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        padding: 3rem;
+        border-radius: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
 
-<link rel="stylesheet" href="css/style.css">
+      .contact .row .map {
+        flex: 1 1 45rem;
+        height: 45rem;
+        border-radius: 1.5rem;
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
+      }
 
+      .contact .row form {
+        flex: 1 1 45rem;
+        padding: 4rem;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 1.5rem;
+      }
+
+      .contact .row form h3 {
+        font-size: 3rem;
+        color: #fff;
+        margin-bottom: 2rem;
+        text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+      }
+
+      .contact .row form .inputBox {
+        margin: 1.5rem 0;
+        border-radius: 1rem;
+        overflow: hidden;
+        border: 1px solid rgba(211, 173, 127, 0.3);
+        background: rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .contact .row form .inputBox:focus-within {
+        border-color: var(--main-color);
+        box-shadow: 0 0 1rem rgba(211, 173, 127, 0.2);
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      .contact .row form .inputBox span {
+        color: var(--main-color);
+        padding: 0 1.5rem;
+      }
+
+      .contact .row form .btn {
+        width: 100%;
+        margin-top: 2rem;
+        border-radius: 1rem;
+        font-weight: 500;
+        letter-spacing: 0.1rem;
+        background: var(--main-color);
+        color: #fff;
+        transition: 0.3s;
+      }
+
+      .contact .row form .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba(211, 173, 127, 0.4);
+      }
+
+      .contact-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        gap: 2rem;
+        margin-bottom: 4rem;
+      }
+
+      .contact-info .info-box {
+        text-align: center;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: 0.3s;
+      }
+
+      .contact-info .info-box:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-5px);
+      }
+
+      .contact-info .info-box i {
+        font-size: 3rem;
+        color: var(--main-color);
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-info .info-box h3 {
+        font-size: 1.8rem;
+        color: #fff;
+        margin-bottom: 0.5rem;
+      }
+
+      .contact-info .info-box p {
+        font-size: 1.5rem;
+        color: #ccc;
+      }
+    </style>
+  </head>
+
+  <body>
     <header class="header">
+      <a href="./index.html" class="logo">
+        <img src="images/logo1.PNG" alt="" />
+      </a>
 
-        <a href="./index.html" class="logo">
-           <img src="images/logo1.PNG" alt="">
-        </a>
-     
-        <nav class="navbar">
-            <a href="./index.html">Acasă</a>
-            <a href="./parts.html">Corp</a>
-            <a href="./menu.html">Magazin</a>
-            <a href="./review.html">Recenzii</a>
-            <a href="./contact.html">Despre noi</a>
-            <a href="./blogs.html">Sfaturi</a>
-     
-        </nav>
-     
-        <div class="icons">
-         <div class="fas fa-search" id="search-btn"></div>
-         <div class="fas fa-shopping-cart" id="cart-btn"></div>
-         <div class="fas fa-bars" id="menu-btn"></div>
-        </div>
-     
-        <div class="search-form">
-           <input type="search" id="search-box" placeholder="caută aici...">
-           <label for="search-box" class="fas fa-search"></label>
-        </div>
-     
-        <div class="cart-items-container">
-           
+      <nav class="navbar">
+        <a href="./index.html">Acasă</a>
+        <a href="./parts.html">Corp</a>
+        <a href="./menu.html">Magazin</a>
+        <a href="./review.html">Recenzii</a>
+        <a href="./contact.html">Despre noi</a>
+        <a href="./blogs.html">Sfaturi</a>
+      </nav>
 
-          <a href="./cart.html" class="btn">finalizare comandă</a>
-        </div>
-     
-     </header>
+      <div class="icons">
+        <div class="fas fa-search" id="search-btn"></div>
+        <div class="fas fa-shopping-cart" id="cart-btn"></div>
+        <div class="fas fa-bars" id="menu-btn"></div>
+      </div>
 
-</head>
+      <div class="search-form">
+        <input type="search" id="search-box" placeholder="caută aici..." />
+        <label for="search-box" class="fas fa-search"></label>
+      </div>
 
-<body>
+      <div class="cart-items-container">
+        <a href="./cart.html" class="btn">finalizare comandă</a>
+      </div>
+    </header>
 
     <section class="contact" id="contact">
+      <h1 class="heading"><span>contactați-ne</span></h1>
 
-        <h1 class="heading"> <span>contactați-ne</span> </h1>
-   
-        <div class="row">
-   
-           <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2783.735089612624!2d21.216942142620933!3d45.75645655614198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474567c4a8f0488d%3A0xfffdddad4193916b!2sGym%20One%205!5e0!3m2!1sro!2sro!4v1741904314478!5m2!1sro!2sro" 
-            allowfullscreen="" loading="lazy" ></iframe>
-   
-            <form action="https://formsubmit.co/manu.mezei01234@gmail.com" method="post">
-               <h3>Contactează-ne</h3>
-               <div class="inputBox">
-                   <span class="fas fa-user"></span>
-                   <input type="text" placeholder="nume">
-               </div>
-               <div class="inputBox">
-                   <span class="fas fa-envelope"></span>
-                   <input type="email" placeholder="email">
-               </div>
-               <div class="inputBox">
-                   <span class="fas fa-phone"></span>
-                   <input type="number" placeholder="număr">
-               </div>
-               <input type="submit" value="contactează acum" class="caca">
-            </form>
-   
+      <div class="contact-info">
+        <div class="info-box">
+          <i class="fas fa-phone"></i>
+          <h3>telefon</h3>
+          <p>+40 123 456 789</p>
         </div>
-   
+        <div class="info-box">
+          <i class="fas fa-envelope"></i>
+          <h3>email</h3>
+          <p>manu.mezei01234@gmail.com</p>
+        </div>
+        <div class="info-box">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3>adresă</h3>
+          <p>Strada Gym One 5, Timișoara, România</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <iframe
+          class="map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2783.735089612624!2d21.216942142620933!3d45.75645655614198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474567c4a8f0488d%3A0xfffdddad4193916b!2sGym%20One%205!5e0!3m2!1sro!2sro!4v1741904314478!5m2!1sro!2sro"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+
+        <form
+          action="https://formsubmit.co/manu.mezei01234@gmail.com"
+          method="post"
+        >
+          <h3>Trimite un mesaj</h3>
+          <div class="inputBox">
+            <span class="fas fa-user"></span>
+            <input type="text" placeholder="nume" />
+          </div>
+          <div class="inputBox">
+            <span class="fas fa-envelope"></span>
+            <input type="email" placeholder="email" />
+          </div>
+          <div class="inputBox">
+            <span class="fas fa-phone"></span>
+            <input type="number" placeholder="număr" />
+          </div>
+          <input type="submit" value="contactează acum" class="btn" />
+        </form>
+      </div>
     </section>
 
     <section class="footer">
+      <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+        <a href="#" class="fab fa-pinterest"></a>
+      </div>
 
-        <div class="share">
-         <a href="#" class="fab fa-facebook-f"></a>
-         <a href="#" class="fab fa-twitter"></a>
-         <a href="#" class="fab fa-instagram"></a>
-         <a href="#" class="fab fa-linkedin"></a>
-         <a href="#" class="fab fa-pinterest"></a>
-        </div>
-     
-        <div class="links">
-            <a href="./index.html">Acasă</a>
-            <a href="./parts.html">Corp</a>
-            <a href="./menu.html">Magazin</a>
-            <a href="./review.html">Recenzii</a>
-            <a href="./contact.html">Despre noi</a>
-            <a href="./blogs.html">Sfaturi</a>
-        </div>
-     
-     <div class="credit">creat de <span>manu</span> | toate drepturile rezervate</div>
-     
-     </section>
-<style>
-    body{
-        background-image: url(images/background11.avif);
-    }
-</style>
+      <div class="links">
+        <a href="./index.html">Acasă</a>
+        <a href="./parts.html">Corp</a>
+        <a href="./menu.html">Magazin</a>
+        <a href="./review.html">Recenzii</a>
+        <a href="./contact.html">Despre noi</a>
+        <a href="./blogs.html">Sfaturi</a>
+      </div>
 
-     <script src="js/script.js"></script>
-    
-</body>
+      <div class="credit">
+        creat de <span>manu</span> | toate drepturile rezervate
+      </div>
+    </section>
+
+    <script src="js/script.js"></script>
+  </body>
 </html>
