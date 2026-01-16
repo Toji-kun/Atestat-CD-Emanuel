@@ -1,54 +1,51 @@
 const questions = [
-    {
-        question: "How much water you should drink daily?",
-        answers: [
-            { text: " At least 2 liters", correct: true },
-            { text: "At least 1 liter", correct: false },
-            { text: "No more then 2 liters", correct: false },
-            { text: "At least 3 liters", correct: false },
-        ]
-    },
-    {
-        question: "What should you do before workouts to prevent injuries and improve flexibility?",
-        answers: [
-            { text: "Drink water", correct: false },
-            { text: "Stretch", correct: true },
-            { text: "Eat something sweat", correct: false },
-            { text: "Breathe slowly", correct: false },
-        ]
-    },
-    {
-        question: "How much time you should spend daily in the sun at least?",
-        answers: [
-            { text: "15 minutes", correct: true },
-            { text: "5 minutes", correct: false },
-            { text: "25 minutes", correct: false },
-            { text: "10 minutes", correct: false },
-        ]
-    },
-    {
-        question: "What you should add in your meals to support muscle growth?",
-        answers: [
-            { text: "Carbohydrates", correct: false },
-            { text: "Lipids", correct: false },
-            { text: "Vitamins", correct: false },
-            { text: "Proteins", correct: true },
-        ]
-    },
-    {
-        question: "What is the best website you have seen today?",
-        answers: [
-            { text: "MTX", correct: true },
-            { text: "Other", correct: false },
-            { text: "Other", correct: false },
-            { text: "Other", correct: false },
-        ]
-    },
-    
-
-  
-   
-    
+  {
+    question: "Câtă apă ar trebui să bei zilnic?",
+    answers: [
+      { text: "Cel puțin 2 litri", correct: true },
+      { text: "Cel puțin 1 litru", correct: false },
+      { text: "Nu mai mult de 2 litri", correct: false },
+      { text: "Cel puțin 3 litri", correct: false },
+    ],
+  },
+  {
+    question:
+      "Ce ar trebui să faci înainte de antrenamente pentru a preveni accidentările și a îmbunătăți flexibilitatea?",
+    answers: [
+      { text: "Să bei apă", correct: false },
+      { text: "Stretching", correct: true },
+      { text: "Să mănânci ceva dulce", correct: false },
+      { text: "Să respiri rar", correct: false },
+    ],
+  },
+  {
+    question: "Cât timp ar trebui să petreci zilnic la soare cel puțin?",
+    answers: [
+      { text: "15 minute", correct: true },
+      { text: "5 minute", correct: false },
+      { text: "25 minute", correct: false },
+      { text: "10 minute", correct: false },
+    ],
+  },
+  {
+    question:
+      "Ce ar trebui să adaugi în mesele tale pentru a susține creșterea musculară?",
+    answers: [
+      { text: "Carbohidrați", correct: false },
+      { text: "Lipide", correct: false },
+      { text: "Vitamine", correct: false },
+      { text: "Proteine", correct: true },
+    ],
+  },
+  {
+    question: "Care este cel mai bun site pe care l-ai văzut astăzi?",
+    answers: [
+      { text: "MTX", correct: true },
+      { text: "Altul", correct: false },
+      { text: "Altul", correct: false },
+      { text: "Altul", correct: false },
+    ],
+  },
 ];
 
 const questionElement = document.getElementById("question");
@@ -59,63 +56,65 @@ let currentQuestionIndex = 0;
 let score = 0;
 
 function startQuiz() {
-    currentQuestionIndex = 0;
-    score = 0;
-    nextButton.innerHTML = "Next";
-    nextButton.style.display = "none";
-    showQuestion();
+  currentQuestionIndex = 0;
+  score = 0;
+  nextButton.innerHTML = "Următoarea";
+  nextButton.style.display = "none";
+  showQuestion();
 }
 
 function showQuestion() {
-    resetState();
-    let currentQuestion = questions[currentQuestionIndex];
-    let questionNo = currentQuestionIndex + 1;
-    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+  resetState();
+  let currentQuestion = questions[currentQuestionIndex];
+  let questionNo = currentQuestionIndex + 1;
+  questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
 
-    currentQuestion.answers.forEach(answer => {
-        const button = document.createElement("button");
-        button.innerHTML = answer.text;
-        button.classList.add("btn");
-        button.addEventListener("click", () => selectAnswer(button, answer.correct));
-        answerButtons.appendChild(button);
-    });
+  currentQuestion.answers.forEach((answer) => {
+    const button = document.createElement("button");
+    button.innerHTML = answer.text;
+    button.classList.add("btn");
+    button.addEventListener("click", () =>
+      selectAnswer(button, answer.correct)
+    );
+    answerButtons.appendChild(button);
+  });
 }
 
 function resetState() {
-    nextButton.style.display = "none";
-    while (answerButtons.firstChild) {
-        answerButtons.removeChild(answerButtons.firstChild);
-    }
+  nextButton.style.display = "none";
+  while (answerButtons.firstChild) {
+    answerButtons.removeChild(answerButtons.firstChild);
+  }
 }
 
 function selectAnswer(button, isCorrect) {
-    if (isCorrect) {
-        button.classList.add("correct");
-        score++;
-    } else {
-        button.classList.add("wrong");
-    }
+  if (isCorrect) {
+    button.classList.add("correct");
+    score++;
+  } else {
+    button.classList.add("wrong");
+  }
 
-    Array.from(answerButtons.children).forEach(btn => btn.disabled = true);
-    nextButton.style.display = "block";
+  Array.from(answerButtons.children).forEach((btn) => (btn.disabled = true));
+  nextButton.style.display = "block";
 }
 
 nextButton.addEventListener("click", () => {
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-        showQuestion();
-    } else {
-        showScore();
-    }
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
+    showQuestion();
+  } else {
+    showScore();
+  }
 });
 
 function showScore() {
-    resetState();
-    questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
-    nextButton.innerHTML = "Play Again";
-    nextButton.style.display = "block";
-    nextButton.removeEventListener("click", showQuestion);
-    nextButton.addEventListener("click", startQuiz);
+  resetState();
+  questionElement.innerHTML = `Ai obținut ${score} din ${questions.length}!`;
+  nextButton.innerHTML = "Joacă din nou";
+  nextButton.style.display = "block";
+  nextButton.removeEventListener("click", showQuestion);
+  nextButton.addEventListener("click", startQuiz);
 }
 
 startQuiz();

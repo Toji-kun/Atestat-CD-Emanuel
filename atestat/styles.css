@@ -1,149 +1,217 @@
 body {
-    font-family: "Kurale", serif;
-    background-color: #4a4a4a;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  font-family: "Kurale", serif;
+  background-color: #4a4a4a;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
 .cart {
-    width: 80%;
-    max-width: 900px;
-    padding: 40px;
-    background: #f8f8f8;
-    border-radius: 10px;
-    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
-    border: 2px solid #3674B5;
-    text-align: center;
+  width: 80%;
+  max-width: 900px;
+  padding: 40px;
+  background: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+  border: 2px solid #3674b5;
+  text-align: center;
 }
 
 .cart table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .cart th {
-    background: #578FCA;
-    color: white;
-    padding: 15px;
-    text-transform: uppercase;
+  background: #578fca;
+  color: white;
+  padding: 15px;
+  text-transform: uppercase;
 }
 
 .cart td {
-    padding: 12px;
-    text-align: center;
-    border-bottom: 2px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  border-bottom: 2px solid #ddd;
 }
 
 .cart tr {
-    border: 2px solid #3674B5;
-    background: white;
+  border: 2px solid #3674b5;
+  background: white;
 }
 
 .cart td button {
-    background: #578FCA;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: 0.2s ease-in-out;
+  background: #578fca;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: 0.2s ease-in-out;
 }
 
 .cart td button:hover {
-    background: #2F6EB1;
+  background: #2f6eb1;
 }
 
 #clear-cart {
-    display: block;
-    width: 100%;
-    background: #D9534F;
-    color: white;
-    padding: 12px;
-    font-size: 18px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 15px;
-    transition: 0.2s ease-in-out;
+  display: block;
+  width: 100%;
+  background: #d9534f;
+  color: white;
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 15px;
+  transition: 0.2s ease-in-out;
 }
 
 #clear-cart:hover {
-    background: #B52B27;
+  background: #b52b27;
 }
 
 .cart-total {
-    text-align: right;
-    font-size: 1.4em;
-    padding: 15px;
-    font-weight: bold;
-    background: #FFF3CD;
-    border-top: 2px solid #3674B5;
-    margin-top: 10px;
+  text-align: right;
+  font-size: 1.4em;
+  padding: 15px;
+  font-weight: bold;
+  background: #fff3cd;
+  border-top: 2px solid #3674b5;
+  margin-top: 10px;
 }
 
 #confirm-order {
-    display: block;
-    width: 100%;
-    background: #28A745;
-    color: white;
-    padding: 12px;
-    font-size: 18px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
-    transition: 0.2s ease-in-out;
+  display: block;
+  width: 100%;
+  background: #28a745;
+  color: white;
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: 0.2s ease-in-out;
 }
 
 #confirm-order:hover {
-    background: #218838;
+  background: #218838;
 }
 
 /* Containerul de coș de cumpărături */
 .cart-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Aliniază elementele pe partea stângă */
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aliniază elementele pe partea stângă */
+  margin-top: 20px;
 }
 
 /* Butoanele din coș */
 .cart-container button {
-    margin-bottom: 10px; /* Adaugă puțin spațiu între butoane */
-    padding: 12px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-bottom: 10px; /* Adaugă puțin spațiu între butoane */
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 /* Stilul pentru butonul Back */
 #back-button {
-    background-color: black;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    width: 100%; /* Lățime completă */
-    text-align: center;
-    margin-top: 20px; /* Spațiu deasupra butonului Back */
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100%; /* Lățime completă */
+  text-align: center;
+  margin-top: 20px; /* Spațiu deasupra butonului Back */
 }
 
 #back-button:hover {
-    background-color: darkgray;
-    transform: scale(1.05);
+  background-color: darkgray;
+  transform: scale(1.05);
+}
+
+/* Stiluri pentru grila de produse din cook.html */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.product {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+.product img {
+  max-width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product h3 {
+  margin: 10px 0;
+  color: #333;
+}
+
+.product .description {
+  font-size: 0.9em;
+  color: #666;
+  margin: 10px 0;
+  min-height: 3em;
+  transition: color 0.3s;
+}
+
+.product:hover .description {
+  color: #000;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.product .price {
+  font-weight: bold;
+  color: #578fca;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.add-to-cart {
+  background: #578fca;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add-to-cart:hover {
+  background: #2f6eb1;
 }
